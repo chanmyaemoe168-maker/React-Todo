@@ -1,14 +1,29 @@
 {
-    "todos": [
-        {
-            "id": 1,
-            "title": "Read a book",
-            "completed": false
-        },
-        {
-            "id": 2,
-            "title": "Walk the dog",
-            "completed": true
-        }
-    ]
+  "todos": [
+    {
+      "id": "1",
+      "title": "Read a book",
+      "completed": false
+    },
+    {
+      "id": "2",
+      "title": "Walk the dog",
+      "completed": true
+    },
+    {
+      "id": "dO1neEogZwU"
+    },
+    {
+      "id": "hOE_r7cpoNo"
+    },
+    {
+      "id": "0Iv_jIvpc98"
+    },
+    {
+      "id": "N_YANuupNoo",
+      "title": "jfe",
+      "completed": false
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }

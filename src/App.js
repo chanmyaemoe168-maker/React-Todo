@@ -11,15 +11,24 @@ function App() {
   let[todos, setTodos] = useState([]);
   
   useEffect(()=> {
-    fetch("http://localhost:3001/todos")
+    fetch("http://localhost:3001/todos"
+    )
     .then(res => res.json())
     .then(todos=> {
       setTodos(todos)
-})    
+})   
   },[])
 
 let addTodo = (todo) => {
   //update data at server site
+  fetch("http://localhost:3001/todos",{
+    method:"POST",
+    headers: {
+      'Content-Type':'application/json'
+    },
+    body:JSON.stringify(todo)
+  })
+
   //update data at client site
   setTodos(prevState => [...prevState,todo])
 
