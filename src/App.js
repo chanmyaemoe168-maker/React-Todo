@@ -43,12 +43,28 @@ let deleteTodo = (todoId) => {
   });
 };
 
+let updateTodo = (todoId, title) => {
+  fetch(`http://localhost:3001/todos/${todoId}`, {
+    method: "PATCH",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ title }),
+  })
+    .then((res) => res.json())
+    .then((updatedTodo) => {
+      setTodos((prevState) =>
+        prevState.map((todo) => (todo.id === todoId ? updatedTodo : todo))
+      );
+    });
+};
+
   return (
     <div className="todo-app-container">
       <div className="todo-app">
         <h2>Todo App</h2>
         <TodoForm addTodo={addTodo}/>
-        <TodoList todo={todos} deleteTodo={deleteTodo} />
+        <TodoList todo={todos} deleteTodo={deleteTodo} updateTodo={updateTodo} />
         <CheckAllAndRemaning/>
 
         {/* to do filter*/}

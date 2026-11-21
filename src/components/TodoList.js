@@ -1,12 +1,12 @@
 import React from 'react'
 import Todo from'../components/Todo.js'
 
-export default function TodoList({ todo,deleteTodo}) {
+export default function TodoList({ todo, deleteTodo, updateTodo }) {
   return (
      <ul className="todo-list">
          {todo.map(todolists => (
            
-          <Todo todo={todolists} key={todolists.id} deleteTodo={deleteTodo}/>
+          <Todo todo={todolists} key={todolists.id} deleteTodo={deleteTodo} updateTodo={updateTodo}/>
          ))}
         
         </ul>
