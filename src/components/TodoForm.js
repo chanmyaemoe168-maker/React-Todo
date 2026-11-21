@@ -5,10 +5,9 @@ export default function TodoForm({addTodo}) {
   let handleSubmit = e => {
     e.preventDefault();
 
-    let todo={
-      id: Math.random(),
+    let todo = {
       title,
-      completed: false
+      completed: false,
     };
     //add todo
     addTodo(todo);
